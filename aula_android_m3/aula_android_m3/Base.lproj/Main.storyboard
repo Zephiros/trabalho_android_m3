@@ -16,17 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-Nw-wNX">
+                                <rect key="frame" x="30" y="277" width="306" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EI4-8s-sOD">
-                                <rect key="frame" x="146" y="170" width="138" height="30"/>
+                                <rect key="frame" x="81" y="163" width="138" height="30"/>
                                 <state key="normal" title="Touch me if you can">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonUnlock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R7P-JX-kbq"/>
+                                    <action selector="text:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KwM-Ce-jdZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tax-fJ-Nec">
-                                <rect key="frame" x="191" y="208" width="48" height="30"/>
+                                <rect key="frame" x="126" y="201" width="48" height="30"/>
                                 <state key="normal" title="Unlock">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -35,7 +41,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNA-he-XSx">
-                                <rect key="frame" x="167" y="132" width="97" height="30"/>
+                                <rect key="frame" x="102" y="239" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -44,6 +50,8 @@
                     </view>
                     <connections>
                         <outlet property="buttonLocked" destination="EI4-8s-sOD" id="doR-a6-bto"/>
+                        <outlet property="buttonUnlock" destination="tax-fJ-Nec" id="eZX-3i-Xic"/>
+                        <outlet property="labelLost" destination="LIc-Nw-wNX" id="08z-UI-i1y"/>
                         <outlet property="receive" destination="TNA-he-XSx" id="PW9-JJ-1fF"/>
                     </connections>
                 </viewController>

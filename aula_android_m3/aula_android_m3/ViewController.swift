@@ -11,11 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var buttonLocked: UIButton!
+    @IBOutlet weak var buttonUnlock: UIButton!
+    
     @IBOutlet weak var receive: UITextField!
+    @IBOutlet weak var labelLost: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         buttonLocked!.enabled = false
+        labelLost.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,9 +29,16 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func text(sender: UIButton) {
+        sender.enabled = false
+        buttonUnlock!.enabled = false
+        labelLost!.enabled = false
+        receive!.enabled = false
+        labelLost.text = "YOU JUST LOST THE GAME"
+    }
 
     @IBAction func unlockButton(sender: UIButton) {
-        let urlPath: String = "http://localhost/alive"
+        let urlPath: String = "http://localhost/unlock/" + receive.text
         var url: NSURL = NSURL(string: urlPath)!
         var request: NSURLRequest = NSURLRequest(URL: url)
         var response: NSURLResponse?
@@ -36,9 +48,9 @@ class ViewController: UIViewController {
         if let httpResponse = response as? NSHTTPURLResponse {
             if httpResponse.statusCode == 200 {
                 buttonLocked!.enabled = true
-//                httpResponse.
-//                receive!.text
-                    = "recebi"
+                labelLost.text = "Yay!"
+            }else{
+                labelLost.text = "Incorrect Password"
             }
         }
     }
